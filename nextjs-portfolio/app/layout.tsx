@@ -81,6 +81,9 @@ export const metadata: Metadata = {
 		images: ["/profile.png"],
 	},
 	category: "technology",
+	verification: {
+		google: "Fxk4TiHZlWYjCaJb47GBetDpNyY6MUgvVfWDO2QjeMQ",
+	},
 };
 
 // JSON-LD structured data for search engines and AI/LLM tools
