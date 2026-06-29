@@ -1,0 +1,307 @@
+@import "tailwindcss";
+
+/* ------- CSS Custom Properties (Design Tokens) ------- */
+:root {
+	/* Colors — Premium Warm Light Theme */
+	--bg-color: #fafafa;
+	--bg-surface: #ffffff;
+	--bg-secondary: hsl(220, 14%, 96%);
+	--primary-color: hsl(220, 13%, 13%);
+	--secondary-color: hsl(215, 16%, 47%);
+	--tertiary-color: hsl(215, 14%, 63%);
+	--quaternary-color: hsl(220, 13%, 91%);
+	--link-color: hsl(172, 66%, 40%); /* Teal accent */
+	--border-color: hsl(220, 13%, 91%);
+	--focus-ring: hsl(172, 66%, 50%);
+
+	/* Fonts — Editorial / Product Company */
+	--primary-font: "Inter", system-ui, -apple-system, sans-serif;
+	--secondary-font: "Inter", system-ui, -apple-system, sans-serif;
+
+	/* Spacing Scale (8-Point Grid) */
+	--space-1: 8px;
+	--space-2: 16px;
+	--space-3: 24px;
+	--space-4: 32px;
+	--space-6: 48px;
+	--space-8: 64px;
+
+	/* Border Radius Scale */
+	--radius-sm: 4px;
+	--radius-md: 8px;
+	--radius-lg: 12px;
+	--radius-full: 9999px;
+
+	/* Shadows — Refined, light-optimized */
+	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+	--shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+	--shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
+	--shadow-nav: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+
+	/* Transition (Stripe-like Fluid ease-out) */
+	--transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+	/* Z-Index Scale */
+	--z-back: -10;
+	--z-default: 1;
+	--z-nav: 1000;
+	--z-modal: 2000;
+}
+
+/* Dark mode — opt-in via data attribute, NOT system preference */
+[data-theme="dark"] {
+	--bg-color: hsl(240, 10%, 3.9%);
+	--bg-surface: hsl(240, 5.8%, 7%);
+	--bg-secondary: hsl(240, 5.8%, 9%);
+	--primary-color: hsl(0, 0%, 98%);
+	--secondary-color: hsl(240, 5%, 64.9%);
+	--tertiary-color: hsl(240, 5%, 45%);
+	--quaternary-color: hsl(240, 3.7%, 15.9%);
+	--border-color: hsl(240, 3.7%, 15.9%);
+}
+
+/* ------- Global Resets & Accessibility ------- */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:focus-visible {
+	outline: 2px solid var(--focus-ring);
+	outline-offset: 4px;
+}
+
+body {
+	font-family: var(--primary-font);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: var(--bg-color);
+	color: var(--primary-color);
+	position: relative;
+}
+
+/* Subtle background depth — very light radial glow */
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background:
+		radial-gradient(ellipse 80% 50% at 50% -20%, hsla(172, 50%, 80%, 0.08), transparent),
+		radial-gradient(ellipse 60% 40% at 80% 60%, hsla(220, 50%, 80%, 0.05), transparent);
+	pointer-events: none;
+	z-index: 0;
+}
+
+/* Faint dot grid pattern for subtle texture */
+body::after {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: radial-gradient(circle, hsla(220, 10%, 70%, 0.12) 1px, transparent 1px);
+	background-size: 24px 24px;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: 16px;
+	background: var(--link-color);
+	color: #fff;
+	padding: 10px 20px;
+	font-size: 14px;
+	font-weight: 700;
+	border-radius: var(--radius-md);
+	z-index: 10000;
+	text-decoration: none;
+	transition: top 0.2s ease;
+}
+
+.skip-link:focus-visible {
+	top: 16px;
+	outline: none;
+	box-shadow: var(--shadow-md);
+}
+
+/* ------- Custom Scrollbar (Light refined) ------- */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #c4c4c4;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #a0a0a0;
+}
+
+/* ------- Page Layout ------- */
+.page-content {
+	background-color: var(--bg-color);
+	position: relative;
+	z-index: 1;
+}
+
+.page-content:before,
+.page-content:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: calc((100% - 1200px) / 2);
+	background-color: var(--bg-color);
+	border: 1px solid var(--border-color);
+}
+
+.page-content:before {
+	left: 0;
+	z-index: 1;
+}
+
+.page-content:after {
+	right: 0;
+	z-index: 1;
+}
+
+.content-wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 2;
+}
+
+/* ------- Typography — Editorial style ------- */
+.title {
+	color: var(--primary-color);
+	font-family: var(--secondary-font);
+	font-size: clamp(28px, 4.5vw, 48px);
+	font-weight: 800;
+	width: 70%;
+	line-height: 1.15;
+	letter-spacing: -0.04em;
+}
+
+.subtitle {
+	padding-top: 10px;
+	color: var(--secondary-color);
+	font-size: clamp(15px, 2.5vw, 17px);
+	line-height: 1.75;
+	width: 70%;
+	margin-top: 20px;
+}
+
+/* ------- Section Alternation Utility ------- */
+.section-alt {
+	background-color: var(--bg-surface);
+	border-top: 1px solid var(--border-color);
+	border-bottom: 1px solid var(--border-color);
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
+	padding-left: calc(50vw - 50%);
+	padding-right: calc(50vw - 50%);
+}
+
+/* ------- Footer Divider ------- */
+.page-footer {
+	position: relative;
+	display: block;
+}
+
+.page-footer::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	border-top: 1px solid var(--quaternary-color);
+}
+
+/* ------- Responsive: 1270px ------- */
+@media (max-width: 1270px) {
+	.page-content:before,
+	.page-content:after {
+		width: calc((100% - 90%) / 2);
+	}
+
+	.content-wrapper {
+		max-width: 90%;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+/* ------- Responsive: 1024px ------- */
+@media (max-width: 1024px) {
+	.page-content:before,
+	.page-content:after {
+		width: calc((100% - 950px) / 2);
+	}
+
+	.content-wrapper {
+		max-width: 980px;
+	}
+
+	.title {
+		width: 100%;
+		font-size: 38px;
+	}
+
+	.subtitle {
+		width: 100%;
+	}
+}
+
+/* ------- Responsive: 800px ------- */
+@media (max-width: 800px) {
+	.content-wrapper {
+		max-width: 90%;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+
+	.page-content:before,
+	.page-content:after {
+		display: none;
+	}
+
+	.title {
+		width: 100%;
+		font-size: 34px;
+	}
+
+	.subtitle {
+		width: 100%;
+	}
+}
+
+/* ------- Responsive: 480px ------- */
+@media (max-width: 480px) {
+	.title {
+		font-size: 28px;
+	}
+
+	.subtitle {
+		font-size: 14px;
+		line-height: 24px;
+	}
+}
+
+/* ------- Sticky Nav Overlay Padding Fix ------- */
+@media (max-width: 640px) {
+	.page-content {
+		padding-bottom: 90px; /* Fully offsets fixed bottom tab bar (65px + 25px buffer) */
+	}
+}

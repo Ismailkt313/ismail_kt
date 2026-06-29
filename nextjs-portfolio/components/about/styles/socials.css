@@ -1,0 +1,39 @@
+.about-socials-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.about-social-item a,
+.about-social-email a {
+	display: inline-flex;
+	align-items: center;
+	gap: 16px;
+	text-decoration: none;
+	color: var(--secondary-color);
+	transition: color 0.2s ease-in-out;
+}
+
+.about-social-item a:hover,
+.about-social-email a:hover {
+	color: var(--link-color);
+}
+
+.about-social-icon {
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+}
+
+.about-social-text {
+	font-size: 13.5px;
+	font-weight: 600;
+}
+
+.about-social-email {
+	border-top: 1.5px solid var(--border-color);
+	padding-top: 16px;
+	margin-top: 8px;
+}

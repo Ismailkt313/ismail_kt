@@ -1,0 +1,81 @@
+.education-body {
+	margin-bottom: 10px;
+}
+
+.education-item {
+	display: flex;
+	padding-bottom: 30px;
+	position: relative;
+	padding-left: 24px;
+}
+
+.education-item:not(:last-child)::before {
+	content: "";
+	position: absolute;
+	left: 6px;
+	top: 14px;
+	bottom: 0;
+	width: 2px;
+	background: var(--quaternary-color);
+}
+
+.education-dot {
+	position: absolute;
+	left: 0;
+	top: 6px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: var(--link-color);
+	border: 3px solid var(--bg-surface, #fff);
+	box-shadow: 0 0 0 2px var(--link-color);
+}
+
+.education-content {
+	flex: 1;
+}
+
+.education-institution {
+	font-size: 15px;
+	font-weight: 700;
+	color: var(--primary-color);
+	margin-bottom: 4px;
+}
+
+.education-course {
+	font-size: 13px;
+	color: var(--secondary-color);
+	margin-bottom: 6px;
+}
+
+.education-meta {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.education-duration {
+	font-size: 12px;
+	color: var(--tertiary-color);
+}
+
+.education-badge {
+	display: inline-block;
+	font-size: 10px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	padding: 3px 8px;
+	border-radius: 20px;
+	background: hsl(166, 76%, 97%);
+	color: var(--link-color);
+	border: 1px solid var(--link-color);
+}
+
+@media (max-width: 480px) {
+	.education-meta {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 6px;
+	}
+}

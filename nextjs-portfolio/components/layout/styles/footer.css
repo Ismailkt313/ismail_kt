@@ -1,0 +1,137 @@
+.footer {
+	display: flex;
+	padding-top: 35px;
+	margin-top: 60px;
+	padding-bottom: 35px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.footer-links {
+	flex-basis: 45%;
+	margin-left: -40px;
+}
+
+.footer-nav-link-list {
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer-nav-link-item {
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.footer-nav-link-list a {
+	text-decoration: none;
+	color: var(--secondary-color);
+	transition: color 0.2s ease-in-out;
+}
+
+.footer-nav-link-list a:hover {
+	color: var(--link-color);
+}
+
+.footer-socials-and-credits {
+	flex-basis: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 12px;
+}
+
+.footer-socials {
+	display: flex;
+	gap: 18px;
+}
+
+.footer-socials a {
+	color: var(--secondary-color);
+	font-size: 16px;
+	transition: all 0.2s ease-in-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background: transparent;
+}
+
+.footer-socials a:hover {
+	color: var(--link-color);
+	transform: translateY(-2px);
+}
+
+.footer-credits {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 4px;
+}
+
+.footer-credits-text {
+	color: var(--tertiary-color);
+	font-size: 13px;
+	text-align: right;
+	font-weight: 500;
+}
+
+.footer-sub-credits-text {
+	color: var(--tertiary-color);
+	font-size: 11px;
+	text-align: right;
+	opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+	.footer {
+		flex-direction: column;
+		gap: 25px;
+		align-items: center;
+		text-align: center;
+	}
+
+	.footer-links {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.footer-nav-link-list {
+		width: 100%;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.footer-socials-and-credits {
+		width: 100%;
+		align-items: center;
+	}
+
+	.footer-socials {
+		justify-content: center;
+	}
+
+	.footer-credits {
+		align-items: center;
+	}
+
+	.footer-credits-text,
+	.footer-sub-credits-text {
+		text-align: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.footer-nav-link-list {
+		flex-wrap: wrap;
+		gap: 12px;
+		justify-content: center;
+	}
+
+	.footer-nav-link-item {
+		font-size: 13px;
+	}
+}

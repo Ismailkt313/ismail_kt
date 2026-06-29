@@ -1,0 +1,318 @@
+.homepage-logo-container {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	padding-top: 105px;
+}
+
+.homepage-container {
+	padding-top: 25px;
+}
+
+.homepage-first-area {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 48px;
+}
+
+.homepage-first-area-left-side {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex: 1;
+	min-width: 0;
+}
+
+.homepage-first-area-right-side {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-shrink: 0;
+}
+
+.homepage-image-container {
+	width: 400px;
+	height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.homepage-image-wrapper {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 10%;
+	transform: rotate(3deg);
+	transition: transform 0.3s ease-in-out;
+	box-shadow: var(--shadow-md);
+}
+
+.homepage-image-wrapper:hover {
+	transform: rotate(0deg) scale(1.02);
+	box-shadow: var(--shadow-lg);
+}
+
+.homepage-image-wrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+/* ------- Hero Section Status Pill ------- */
+.hero-status-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 14px;
+	background: var(--bg-surface);
+	border: 1px solid var(--border-color);
+	border-radius: var(--radius-full);
+	margin-bottom: var(--space-2);
+}
+
+.status-dot {
+	width: 8px;
+	height: 8px;
+	background-color: var(--link-color);
+	border-radius: 50%;
+	display: inline-block;
+	animation: pulse 2s infinite ease-in-out;
+}
+
+.status-text {
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--secondary-color);
+	letter-spacing: 0.5px;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.9);
+		opacity: 0.6;
+	}
+	50% {
+		transform: scale(1.1);
+		opacity: 1;
+		box-shadow: 0 0 8px var(--link-color);
+	}
+	100% {
+		transform: scale(0.9);
+		opacity: 0.6;
+	}
+}
+
+/* ------- Hero Tech Stack Row ------- */
+.hero-stack-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: var(--space-2);
+	margin-bottom: var(--space-3);
+}
+
+.hero-stack-badge {
+	font-size: 11.5px;
+	font-weight: 600;
+	color: var(--secondary-color);
+	background: var(--bg-surface);
+	border: 1px solid var(--border-color);
+	padding: 4px 10px;
+	border-radius: var(--radius-sm);
+	transition: var(--transition-smooth);
+}
+
+.hero-stack-badge:hover {
+	border-color: var(--link-color);
+	color: var(--link-color);
+}
+
+/* ------- Hero Actions & Socials Layout ------- */
+.hero-actions-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: var(--space-2);
+	gap: 16px;
+}
+
+.hero-buttons {
+	display: flex;
+	gap: 12px;
+}
+
+/* ------- Premium Button Variants ------- */
+.btn-primary,
+.btn-secondary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 44px;
+	padding: 0 20px;
+	font-size: 13.5px;
+	font-weight: 600;
+	text-decoration: none;
+	border-radius: var(--radius-md);
+	transition: var(--transition-smooth);
+}
+
+.btn-primary {
+	background: var(--link-color);
+	color: #ffffff;
+	border: 1px solid transparent;
+}
+
+.btn-secondary {
+	background: var(--bg-surface);
+	color: var(--primary-color);
+	border: 1px solid var(--border-color);
+}
+
+/* Desktop hovers using media hover */
+@media (hover: hover) {
+	.btn-primary:hover {
+		opacity: 0.9;
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px hsla(172, 66%, 40%, 0.25);
+	}
+
+	.btn-secondary:hover {
+		border-color: var(--secondary-color);
+		transform: translateY(-1px);
+		box-shadow: var(--shadow-sm);
+	}
+}
+
+.homepage-socials {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.homepage-social-icon {
+	font-size: 20px;
+	transition: var(--transition-smooth);
+	color: var(--tertiary-color);
+}
+
+.homepage-social-icon:hover {
+	color: var(--link-color);
+	transform: scale(1.1);
+}
+
+.homepage-projects {
+	padding-top: 56px;
+}
+
+.homepage-after-title {
+	display: flex;
+	gap: 30px;
+}
+
+.homepage-tech-stack {
+	flex: 2;
+}
+
+.homepage-education {
+	flex: 1;
+	padding-top: 40px;
+}
+
+/* ------- Responsive: 1024px ------- */
+@media (max-width: 1024px) {
+	.homepage-first-area {
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.homepage-first-area-left-side {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+		order: 2;
+	}
+
+	.homepage-title {
+		width: 100% !important;
+		margin-top: 16px;
+		order: 2;
+		text-align: left;
+	}
+
+	.homepage-subtitle {
+		width: 100% !important;
+		margin-top: 10px;
+		order: 3;
+		text-align: left;
+	}
+
+	.homepage-first-area-right-side {
+		width: 100%;
+		justify-content: center;
+		order: 1;
+	}
+
+	.homepage-image-container {
+		padding-top: 24px;
+		padding-bottom: 24px;
+		margin: 0 auto;
+		max-width: 300px;
+		order: 1;
+	}
+
+	.homepage-after-title {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.homepage-projects {
+		flex-basis: auto;
+	}
+}
+
+/* ------- Responsive: 768px ------- */
+@media (max-width: 768px) {
+	.homepage-logo-container {
+		padding-top: 96px;
+	}
+
+	.homepage-image-container {
+		max-width: 260px;
+	}
+
+	.homepage-socials {
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+}
+
+/* ------- Responsive: 640px ------- */
+@media (max-width: 640px) {
+	.homepage-logo-container {
+		display: none;
+	}
+
+	.homepage-container {
+		padding-top: 76px; /* Offset the 56px fixed top header */
+	}
+}
+
+/* ------- Responsive: 480px ------- */
+@media (max-width: 480px) {
+	.homepage-image-container {
+		max-width: 200px;
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+
+	.homepage-social-icon {
+		font-size: 20px;
+		padding-right: 12px;
+	}
+}

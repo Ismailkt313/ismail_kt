@@ -1,0 +1,41 @@
+.all-projects-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.all-projects-project {
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+@media (min-width: 768px) {
+	.all-projects-flagship-wrapper {
+		grid-column: span 3;
+	}
+}
+
+@media (max-width: 768px) {
+	.all-projects-container {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+	}
+
+	.all-projects-flagship-wrapper {
+		grid-column: span 2;
+	}
+}
+
+@media (max-width: 520px) {
+	.all-projects-container {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.all-projects-flagship-wrapper {
+		grid-column: span 1;
+	}
+}

@@ -1,0 +1,137 @@
+.tech-stack-section {
+	padding-top: 30px;
+}
+
+.tech-stack-title {
+	font-family: var(--secondary-font);
+	font-size: 22px;
+	font-weight: 700;
+	color: var(--primary-color);
+	margin-bottom: 20px;
+}
+
+.tech-stack-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 16px;
+}
+
+.tech-category {
+	background: var(--bg-surface, #fff);
+	border: 1px solid var(--border-color);
+	border-radius: 12px;
+	padding: 16px;
+	transition: all 0.3s ease-in-out;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	box-shadow: var(--shadow-sm);
+}
+
+.tech-category:hover {
+	border-color: var(--link-color);
+	box-shadow: 0 4px 15px hsla(172, 66%, 40%, 0.06);
+	transform: translateY(-1px);
+}
+
+.tech-category-title {
+	font-family: var(--secondary-font);
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--tertiary-color);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 12px;
+}
+
+.tech-skills-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	flex-grow: 1;
+	align-content: flex-start;
+}
+
+.tech-skill-item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 5px 9px;
+	background: var(--bg-secondary);
+	border-radius: 6px;
+	transition: all 0.2s ease-in-out;
+}
+
+.tech-skill-item:hover {
+	background: hsl(166, 76%, 97%);
+	transform: scale(1.03);
+}
+
+.tech-skill-icon {
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+}
+
+.tech-skill-name {
+	font-size: 11.5px;
+	font-weight: 600;
+	color: var(--secondary-color);
+}
+
+.tech-stack-expand-container {
+	display: flex;
+	justify-content: center;
+	padding-top: 24px;
+}
+
+.tech-stack-expand-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 20px;
+	background: var(--bg-surface, #fff);
+	border: 1px solid var(--border-color);
+	border-radius: 30px;
+	color: var(--secondary-color);
+	font-weight: 600;
+	font-size: 13px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.tech-stack-expand-btn:hover {
+	border-color: var(--link-color);
+	color: var(--link-color);
+	box-shadow: 0 4px 10px hsla(172, 66%, 40%, 0.08);
+	transform: translateY(-1px);
+}
+
+.tech-stack-expand-btn svg {
+	font-size: 14px;
+}
+
+@media (max-width: 768px) {
+	.tech-stack-grid {
+		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+}
+
+@media (max-width: 480px) {
+	.tech-stack-title {
+		font-size: 18px;
+	}
+
+	.tech-skill-item {
+		padding: 4px 8px;
+	}
+
+	.tech-skill-name {
+		font-size: 11px;
+	}
+
+	.tech-skill-icon {
+		font-size: 13px;
+	}
+}
