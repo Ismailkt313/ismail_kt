@@ -106,6 +106,7 @@ const Homepage = () => {
 										</Link>
 										<a
 											href="/resume.pdf"
+											download="Muhammed_Ismail_KT_CV.pdf"
 											target="_blank"
 											rel="noopener noreferrer"
 											onClick={() => trackEvent("resume_downloaded")}
