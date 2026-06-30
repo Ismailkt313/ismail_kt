@@ -81,6 +81,9 @@ export const metadata: Metadata = {
 		images: ["/profile.png"],
 	},
 	category: "technology",
+	alternates: {
+		canonical: "./",
+	},
 	verification: {
 		google: "Fxk4TiHZlWYjCaJb47GBetDpNyY6MUgvVfWDO2QjeMQ",
 	},
