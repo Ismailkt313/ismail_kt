@@ -97,7 +97,7 @@ const jsonLd = {
 		"React-focused developer with solid fundamentals in JavaScript, TypeScript, and modern frontend and backend development. Trained at Brototype bootcamp.",
 	email: "muhammedismailkt@gmail.com",
 	telephone: "+918089471532",
-	url: "https://ismailkt.dev",
+	url: "https://ismail-kt.vercel.app",
 	sameAs: [
 		"https://github.com/Ismailkt313",
 		"https://www.linkedin.com/in/ismmail-kt-7117a3321",

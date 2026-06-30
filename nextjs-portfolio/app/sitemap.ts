@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const baseUrl = "https://ismailkt.dev";
+	const baseUrl = "https://ismail-kt.vercel.app";
 
 	return [
 		{

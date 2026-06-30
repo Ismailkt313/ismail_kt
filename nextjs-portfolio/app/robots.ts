@@ -24,6 +24,6 @@ export default function robots(): MetadataRoute.Robots {
 				allow: "/",
 			},
 		],
-		sitemap: "https://ismailkt.dev/sitemap.xml",
+		sitemap: "https://ismail-kt.vercel.app/sitemap.xml",
 	};
 }
